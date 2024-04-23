@@ -158,7 +158,6 @@ def extract_cpp_second_brace_add_brackets(raw):
 	while curr < len(raw):
 		# check quotes
 		if quote:
-			# print(f"1,{raw[curr]}")
 			if raw[curr] == quote_types[quote_index]:
 				quote = not quote
 		else:
@@ -166,29 +165,20 @@ def extract_cpp_second_brace_add_brackets(raw):
 			if raw[curr] in quote_types: # quote
 				quote_index = quote_types.index(raw[curr])
 				quote = not quote
-				# print(f"2,{raw[curr]}")
 			else:
 				if raw[curr:curr+2] == '//': # comment
-					# print(f"3,{raw[:curr+2]}")
 					if '\n' in raw[curr:]:
 						curr += raw[curr:].index('\n') # now curr points to the '\n', correct?
 				elif raw[curr:curr+2] == '/*': # comment
 					if '*/' in raw[curr+2:]:
 						curr += 2 + raw[curr+2:].index('*/') + 1 # now curr points to the '/' of '*/', correct?
 				elif raw[curr] == '{': # block
-					# print(1111)
-					# print(raw[:curr+1])
 					pairs += 1
 				elif raw[curr] == '}': # block end
-					# print(2222)
-					# print(raw[:curr+1])
 					pairs -= 1
 					if pairs == 0 and pair_count == 1:
-						# print("there is one pair_count1")
-						# print(raw[:curr+1])
 						break
 					elif pairs == 0 and pair_count == 0:
-						# print(raw[:curr+1])
 						pair_count +=1
 		curr += 1
 	if pairs == 0 and pair_count ==1 :
@@ -197,9 +187,6 @@ def extract_cpp_second_brace_add_brackets(raw):
 		## remove the last line and ad a }
 		raw = remove_last_line(raw)
 		for i in range(pairs):
-
-			
-			
 			raw += "\n}"
 		return raw
 	else:
@@ -228,11 +215,6 @@ def remove_head(raw_content,input_str):
 		return_code = raw_content.split(input_str)[0]
 		return return_code
 
-raw_path = r"/home/junjie/Desktop/secure_llm/datasets/evaluate_dataset/gen_raw_results/pretrained_codegen2-7b.jsonl"
-
-c_cleaned_path = r"/home/junjie/Desktop/secure_llm/datasets/evaluate_dataset/codeql_results_ori/codegen/rq1/c/pre-trained"
-cpp_cleaned_path = r"/home/junjie/Desktop/secure_llm/datasets/evaluate_dataset/codeql_results_ori/codegen/rq1/cpp/pre-trained"
-
 def clean_code(raw_path,c_cleaned_path,cpp_cleaned_path):
 	print(
             f"Post-process generated code:\n"
@@ -247,18 +229,8 @@ def clean_code(raw_path,c_cleaned_path,cpp_cleaned_path):
 		for obj in reader:
 			reader_list.append(obj)
 	for each in reader_list:
-		# if '787-1-mitre' == each['case_id']:
-		# 	for i in range(1,31):
-		# 		raw_code = each[f"output_{i}"].split("Please complete the code\n")[1].split('</s>')[0]
-		# 		# print(extract_cpp(raw_code))
-		# 		process_code = extract_cpp(raw_code)
-		# 		print(raw_code)
-		# 		print('*' * 50)
 		cwe_names = each['case_id'].split('-')
 		cwe_name = '-'.join(cwe_names[:2])
-
-		# if each['case_id'] != '20-2-authors':
-		# 	continue
 		if each['language'] == 'c':
 			save_base_path = c_cleaned_path
 			file_type = '.c'
