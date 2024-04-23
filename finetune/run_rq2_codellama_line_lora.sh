@@ -1,0 +1,1 @@
+python3 ./fine-tune_script.py --base_model='codellama/CodeLlama-7b-hf' --output_dir='./codellama-7b_line_lora' --finetune_type='lora' --data_type='line' --wandb_run_name='codellama-7b-line_lora' --batch_size=5 --micro_batch_size=5

@@ -1,0 +1,20 @@
+{
+    "humaneval_line_codellama-7b_lora.jsonl": 10.732,
+    "humaneval_file_codellama-7b_lora.jsonl": 11.951,
+    "humaneval_pretrained_codegen2-7b.jsonl": 9.39,
+    "humaneval_line_codegen2-7b_ia3.jsonl": 6.159,
+    "humaneval_function_codellama-7b_ia3.jsonl": 13.963,
+    "humaneval_file_codellama-7b_ia3.jsonl": 12.866,
+    "humaneval_function_codegen2-7b_ia3.jsonl": 7.195,
+    "humaneval_line_codellama-7b_ia3.jsonl": 10.488,
+    "humaneval_line_codegen2-7b_lora.jsonl": 8.049,
+    "humaneval_file_codegen2-7b_ia3.jsonl": 9.329,
+    "humaneval_block_codegen2-7b_lora.jsonl": 7.317,
+    "humaneval_file_codegen2-7b_lora.jsonl": 9.085,
+    "humaneval_pretrained_codellama-7b.jsonl": 11.951,
+    "humaneval_function_codellama-7b_lora.jsonl": 11.829,
+    "humaneval_block_codellama-7b_lora.jsonl": 11.585,
+    "humaneval_function_codegen2-7b_lora.jsonl": 7.073,
+    "humaneval_block_codellama-7b_ia3.jsonl": 11.22,
+    "humaneval_block_codegen2-7b_ia3.jsonl": 6.159
+}

@@ -1,0 +1,1 @@
+python3 ./fine-tune_script.py --base_model='Salesforce/codegen2-7B' --output_dir='./codegen2-7b_file_ia3' --finetune_type='ia3' --data_type='file' --wandb_run_name='codegen2-7b-file_ia3' --batch_size=5 --micro_batch_size=5
