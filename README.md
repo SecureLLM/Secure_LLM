@@ -51,7 +51,7 @@ Then, run the command to evaluate using CodeQL. Please be sure that the CodeQL i
     --ql_rule_path='../config_files/ql.jsonl' \
     --language='c'
 ## Results
-The folder 'results' saved the results. For the details of the raw data and the adapter weights, please follow the link **todo**
+The folder 'results' saved the results. For the details of the raw data and the adapter weights, please follow the [link](https://zenodo.org/records/11055228)
 
 
 
